@@ -8,8 +8,8 @@ const dotenv = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Axel Catasús' Portfolio`,
+    siteUrl: `https://silver-biscotti-363c1f.netlify.app/`
   },
   plugins: [{
     resolve: 'gatsby-source-contentful',
@@ -28,7 +28,13 @@ module.exports = {
       "path": "./src/images/"
     },
     __key: "images"
-  }]
+  },
+{
+  resolve: `gatsby-plugin-manifest`,
+  options: {
+    icon: `src/images/favicon.png`,
+  },
+}]
 };
 
 
