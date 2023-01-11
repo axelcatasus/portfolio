@@ -1,0 +1,42 @@
+.about-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.text-section {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  h3 {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+.portraits-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 1rem;
+
+  .portrait {
+    height: 15rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+  }
+}

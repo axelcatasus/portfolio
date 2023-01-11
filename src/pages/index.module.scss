@@ -1,0 +1,27 @@
+.index-main {
+  text-align: center;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  height: 10rem;
+  width: 10rem;
+}
+
+.facebook-icon {
+  background: url(../images/facebook.svg) no-repeat;
+  background-size: contain;
+}
+.github-icon {
+  background: url(../images/github.svg) no-repeat;
+  background-size: contain;
+}
+.instagram-icon {
+  background: url(../images/instagram.svg) no-repeat;
+  background-size: contain;
+}

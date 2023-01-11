@@ -1,0 +1,32 @@
+.single-project-main {
+  text-align: center;
+
+  h1 {
+    font-size: 7.5rem;
+  }
+  * {
+    margin: 0.5rem;
+  }
+}
+
+.back-button {
+  position: absolute;
+  top: 0rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  font-size: 5rem;
+  a {
+    text-decoration: none;
+  }
+}
+
+.screenshots-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  img {
+    width: 80vw;
+  }
+}
