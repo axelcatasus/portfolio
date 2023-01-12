@@ -1,12 +1,21 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { projectsMain, projectArticle, categorySelectContainer, activeCategory } from "./projects.module.scss";
+import { projectsMain, projectArticle, categorySelectContainer, activeCategory, htmlLogo, jsLogo, vueLogo, logo } from "./projects.module.scss";
 import HamburgerMenu from "../../components/header/HamburgerMenu";
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allContentfulProject.nodes;
   const categories = data.allContentfulProject.distinct;
+
+  const getCategoryIcon = (category) => {
+    switch (category) {
+      case "HTML & CSS": return <span className={[htmlLogo, logo].join(' ')} />;
+      case "Native JS": return <span className={[jsLogo, logo].join(' ')} />;
+      case "Vue.js": return <span className={[vueLogo, logo].join(' ')} />;
+      default: return '?'
+    }
+  }
 
   const [selectedCategory, setCategory] = React.useState("All");
 
@@ -20,11 +29,19 @@ const ProjectsPage = ({ data }) => {
       <HamburgerMenu />
       <main className={projectsMain}>
         <h1>Projects</h1>
-        <section className={categorySelectContainer}>
+        <section className={[categorySelectContainer, 'desktop'].join(' ')}>
           <button className={selectedCategory === 'All' ? activeCategory : ''} onClick={() => setCategory("All")}>All</button>
           {categories.map((category) => (
             <button key={category} onClick={() => setCategory(category)} className={selectedCategory === category ? activeCategory : ''}>
               {category}
+            </button>
+          ))}
+        </section>
+        <section className={[categorySelectContainer, 'mobile'].join(' ')}>
+          <button className={selectedCategory === 'All' ? activeCategory : ''} onClick={() => setCategory("All")}>All</button>
+          {categories.map((category) => (
+            <button key={category} onClick={() => setCategory(category)} className={selectedCategory === category ? activeCategory : ''}>
+              {getCategoryIcon(category)}
             </button>
           ))}
         </section>

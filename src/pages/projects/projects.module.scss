@@ -28,3 +28,28 @@
     margin-top: 0.5rem;
   }
 }
+
+.logo {
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0 1rem;
+}
+
+.html-logo {
+  background: url('../../images/html5.svg') no-repeat;
+}
+
+.js-logo {
+  background: url('../../images/javascript.svg') no-repeat;
+}
+
+.vue-logo {
+  background: url('../../images/vue.svg') no-repeat;
+}
+
+@media (max-width: 1000px) {
+  .project-article {
+    width: 80vw;
+  }
+}

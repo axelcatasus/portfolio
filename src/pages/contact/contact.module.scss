@@ -1,5 +1,7 @@
 .contact-main {
   text-align: center;
+  display: flex;
+  flex-direction: column;
   img {
     border-radius: 50%;
   }

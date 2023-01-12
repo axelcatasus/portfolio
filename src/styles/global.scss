@@ -25,3 +25,16 @@ a {
 .visually-hidden {
   display: none;
 }
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
