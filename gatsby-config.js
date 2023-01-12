@@ -3,7 +3,6 @@
  */
 
 require('dotenv').config();
-
 const dotenv = process.env;
 
 module.exports = {
@@ -17,10 +16,6 @@ module.exports = {
       "accessToken": dotenv.CONTENTFUL_ACCESS_TOKEN,
       "spaceId": dotenv.CONTENTFUL_SPACE_ID
     }
-    // options: {
-    //   "accessToken": "ql7DZ_-loYRgthXRFo_6BTs_yXx2Zeg4tvc1tBx1GSY",
-    //   "spaceId": "dphdxqy6qqbr"
-    // }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-source-filesystem',
     options: {
