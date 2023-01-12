@@ -5,7 +5,9 @@ import { indexMain, socialMediaContainer, facebookIcon, githubIcon, instagramIco
 import HamburgerMenu from "../components/header/HamburgerMenu";
 
 const IndexPage = ({ data }) => {
+  // receive the data from Contenful and store in variable homePage
   const homePage = data.allContentfulHomePage.nodes[0];
+  // destructure the data from homePage
   const { title, message, facebook, github, instagram } = homePage;
 
   return (
@@ -16,6 +18,7 @@ const IndexPage = ({ data }) => {
         {renderRichText(message)}
         <section className={socialMediaContainer}>
           <a href={facebook} className={[facebookIcon, icon].join(' ')}>
+            {/* span for accessibility */}
             <span className="visually-hidden">Facebook</span>
           </a>
           <a href={github} className={[githubIcon, icon].join(' ')}>

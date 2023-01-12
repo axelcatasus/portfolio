@@ -31,6 +31,8 @@ const SingleProjectPage = ({ data }) => {
 
 export default SingleProjectPage
 export const SingleProjectPageQuery = graphql`
+# using the $id variable to query for a specific project
+# i have access to the $id because of the file name
   query ($id: String!) {
     contentfulProject(id: { eq: $id }) {
       id
