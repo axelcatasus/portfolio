@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import image from '../images/screenshot.png';
 
 const SEO = ({ props }) => {
   const data = useStaticQuery(graphql`
@@ -12,12 +11,13 @@ const SEO = ({ props }) => {
           description
           author
           siteUrl
+          image
           keywords
         }
       }
     }
     `);
-  const { title, description, author, siteUrl, keywords } = data.site.siteMetadata;
+  const { title, description, author, siteUrl, image, keywords } = data.site.siteMetadata;
 
   return (
     <Helmet>
