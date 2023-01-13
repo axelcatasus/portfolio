@@ -7,8 +7,12 @@ const dotenv = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `Axel Catasús' Portfolio`,
-    siteUrl: `https://silver-biscotti-363c1f.netlify.app/`
+    title: `axcat's portfolio`,
+    author: `axcat`,
+    siteUrl: `https://silver-biscotti-363c1f.netlify.app/`,
+    description: `The portfolio of axcat, a frontend developer from Stockholm, Sweden`,
+    image: './src/images/screenshot.png',
+    keywords: `axcat, Portfolio, Frontend, Developer, Web, Developer, Stockholm, Sweden, JavaScript, React, Gatsby, TypeScript, GraphQL, Node, HTML, CSS, SASS, PostCSS, Contentful, Netlify, Git, GitHub, GitLab, Bitbucket, Visual Studio Code, VSCode, WebStorm, IntelliJ, PHP, MySQL, MongoDB, Docker, Linux, Ubuntu, Windows, macOS, Mac, Apple, iPhone, iPad, Android, Mobile, Responsive, Design, UI, UX, User Interface, User Experience, Accessibility`,
   },
   plugins: [{
     resolve: 'gatsby-source-contentful',

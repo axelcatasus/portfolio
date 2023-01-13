@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { indexMain, socialMediaContainer, facebookIcon, githubIcon, instagramIcon, icon } from "./index.module.scss";
 import HamburgerMenu from "../components/header/HamburgerMenu";
+import Seo from "../components/seo";
 
 const IndexPage = ({ data }) => {
   // receive the data from Contenful and store in variable homePage
@@ -12,6 +13,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <Seo />
       <HamburgerMenu />
       <main className={indexMain}>
         <h1>{title}</h1>
@@ -35,9 +37,9 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage;
 
-export const Head = ({ data }) => (
-  <title>{data.allContentfulHomePage.nodes[0].title}</title>
-);
+// export const Head = ({ data }) => (
+//   <title>{data.allContentfulHomePage.nodes[0].title}</title>
+// );
 
 export const query = graphql`
   {
