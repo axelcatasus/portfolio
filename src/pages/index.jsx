@@ -37,10 +37,6 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage;
 
-// export const Head = ({ data }) => (
-//   <title>{data.allContentfulHomePage.nodes[0].title}</title>
-// );
-
 export const query = graphql`
   {
     allContentfulHomePage {

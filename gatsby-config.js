@@ -20,7 +20,7 @@ module.exports = {
       "accessToken": dotenv.CONTENTFUL_ACCESS_TOKEN,
       "spaceId": dotenv.CONTENTFUL_SPACE_ID
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", 'gatsby-plugin-react-helmet', {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
