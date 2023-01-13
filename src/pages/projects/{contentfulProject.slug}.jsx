@@ -24,7 +24,7 @@ const SingleProjectPage = ({ data }) => {
         {renderRichText(description)}
         <section className={screenshotsContainer}>
         {screenshots.map((screenshot) => (
-          <img key={screenshot.file.url} src={screenshot.file.url} alt={title} />
+          <img key={screenshot.resize.src} src={screenshot.resize.src} alt={title} />
         ))}
 
         </section>
@@ -49,8 +49,8 @@ export const SingleProjectPageQuery = graphql`
         raw
       }
       screenshots {
-        file {
-          url
+        resize(format: WEBP, width: 2000) {
+          src
         }
       }
     }

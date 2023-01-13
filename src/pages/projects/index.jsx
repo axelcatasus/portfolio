@@ -97,7 +97,7 @@ export const query = graphql`
         }
         id
         screenshots {
-          resize(width: 800) {
+          resize(width: 1200) {
             src
           }
         }
