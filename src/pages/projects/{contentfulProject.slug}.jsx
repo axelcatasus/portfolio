@@ -3,12 +3,16 @@ import { graphql, Link } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { backButton, singleProjectMain, screenshotsContainer } from './single-project.module.scss'
 import HamburgerMenu from '../../components/header/HamburgerMenu'
+import Seo from '../../components/seo'
 
 const SingleProjectPage = ({ data }) => {
   const singleProject = data.contentfulProject
-  const { title, published, url, categories, description, screenshots } = singleProject
+  const { title, published, url, categories, description, screenshots, slug } = singleProject
+
+
   return (
     <>
+      <Seo title={title} description={'made with ' + categories[0]} path={'/projects/' + slug} />
       <button className={backButton}><Link to="/projects">&#60;</Link></button>
       <HamburgerMenu />
       <main className={singleProjectMain}>

@@ -7,11 +7,11 @@ const dotenv = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `axcat's portfolio`,
+    title: `axcat's portfolio - frontend developer`,
     author: `axcat`,
-    image: 'https://i.imgur.com/mp3YDtT.png',
+    image: 'https://i.imgur.com/mzIqzX2.jpg',
     siteUrl: `https://silver-biscotti-363c1f.netlify.app/`,
-    description: `The portfolio of axcat, a frontend developer from Stockholm, Sweden`,
+    description: `The beautiful portfolio of axcat, a junior frontend developer from Stockholm, Sweden`,
     keywords: `axcat, Portfolio, Frontend, Developer, Web, Developer, Stockholm, Sweden, JavaScript, React, Gatsby, TypeScript, GraphQL, Node, HTML, CSS, SASS, PostCSS, Contentful, Netlify, Git, GitHub, GitLab, Bitbucket, Visual Studio Code, VSCode, WebStorm, IntelliJ, PHP, MySQL, MongoDB, Docker, Linux, Ubuntu, Windows, macOS, Mac, Apple, iPhone, iPad, Android, Mobile, Responsive, Design, UI, UX, User Interface, User Experience, Accessibility`,
   },
   plugins: [{

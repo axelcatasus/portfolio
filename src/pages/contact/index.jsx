@@ -2,14 +2,16 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import HamburgerMenu from "../../components/header/HamburgerMenu";
+import Seo from "../../components/seo";
 import { contactMain } from "./contact.module.scss";
 
 const ContactPage = ({ data }) => {
   const contactPage = data.allContentfulContactPage.nodes[0];
-  const { title, message, image, emailAddress, phoneNumber } = contactPage;
+  const { title, message, image, emailAddress, phoneNumber, seoTitle, seoDescription, path } = contactPage;
 
   return (
     <>
+      <Seo title={seoTitle} description={seoDescription} path={path} />
       <HamburgerMenu />
       <main className={contactMain}>
         <h1>{title}</h1>
@@ -50,6 +52,9 @@ export const query = graphql`
         message {
           raw
         }
+      seoTitle
+      seoDescription
+      path
       }
     }
   }

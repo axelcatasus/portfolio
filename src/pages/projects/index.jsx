@@ -3,10 +3,14 @@ import { graphql, Link } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { projectsMain, projectArticle, categorySelectContainer, activeCategory, htmlLogo, jsLogo, vueLogo, logo } from "./projects.module.scss";
 import HamburgerMenu from "../../components/header/HamburgerMenu";
+import Seo from "../../components/seo";
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allContentfulProject.nodes;
   const categories = data.allContentfulProject.distinct;
+
+  // destructure the data from projectsPage
+  const { seoTitle, seoDescription, path } = data.allContentfulProjectsPage.nodes[0];
 
 
   // function that returns a span whose class corresponds with the rendered category
@@ -30,6 +34,8 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <>
+    {/* passing down props to Seo component */}
+      <Seo title={seoTitle} description={seoDescription} path={path} />
       <HamburgerMenu />
       <main className={projectsMain}>
         <h1>Projects</h1>
@@ -102,5 +108,12 @@ export const query = graphql`
       # using the distinct to get all unique values of categories within the projects
       distinct(field: { categories: SELECT })
     }
+    allContentfulProjectsPage {
+    nodes {
+      seoTitle
+      seoDescription
+      path
+    }
+  }
   }
 `;

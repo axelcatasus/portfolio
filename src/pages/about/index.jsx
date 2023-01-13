@@ -3,13 +3,15 @@ import { graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { aboutMain, textSection, portraitsContainer, portrait } from "./about.module.scss";
 import HamburgerMenu from "../../components/header/HamburgerMenu";
+import Seo from "../../components/seo";
 
 const AboutPage = ({ data }) => {
   const aboutPage = data.allContentfulAboutPage.nodes[0];
-  const { title, message, portraits } = aboutPage;
+  const { title, message, portraits, seoTitle, seoDescription, path } = aboutPage;
 
   return (
     <>
+      <Seo title={seoTitle} description={seoDescription} path={path} />
       <HamburgerMenu />
       <main className={aboutMain}>
       <section className={portraitsContainer}>
@@ -64,6 +66,9 @@ export const query = graphql`
         work {
           raw
         }
+        seoTitle
+        seoDescription
+        path
       }
     }
   }

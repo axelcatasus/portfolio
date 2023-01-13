@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-const SEO = ({ props }) => {
+const SEO = ( props ) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -16,8 +16,14 @@ const SEO = ({ props }) => {
         }
       }
     }
-    `);
-  const { title, description, author, siteUrl, image, keywords } = data.site.siteMetadata;
+  `);
+
+  const { author, image, keywords } = data.site.siteMetadata;
+
+  const title = props.title || data.site.siteMetadata.title;
+  const description = props.description || data.site.siteMetadata.description;
+  const siteUrl = data.site.siteMetadata.siteUrl + props.path || data.site.siteMetadata.siteUrl;
+
 
   return (
     <Helmet>

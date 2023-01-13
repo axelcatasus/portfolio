@@ -1,5 +1,17 @@
 .index-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  height: 70vh;
+}
+
+.profile-image {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  margin-bottom: 2rem;
 }
 
 .social-media-container {
@@ -11,15 +23,24 @@
 .icon {
   height: 10rem;
   width: 10rem;
-  background-size: contain;
 }
 
 .facebook-icon {
   background: url(../images/facebook.svg) no-repeat;
+  background-size: cover;
 }
 .github-icon {
   background: url(../images/github.svg) no-repeat;
+  background-size: cover;
 }
 .instagram-icon {
   background: url(../images/instagram.svg) no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 500px) {
+  .icon {
+    height: 5rem;
+    width: 5rem;
+  }
 }
