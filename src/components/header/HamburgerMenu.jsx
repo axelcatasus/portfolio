@@ -43,7 +43,7 @@ const HamburgerMenu = () => {
       // using tabIndex={0} to make the div focusable
       // using onKeyDown to make the div focusable with the tab key
       // using e.key !== 'Tab' to prevent the div from closing when the tab key is pressed
-      <div className={modal} onClick={() => setMenuOpen(false)} onKeyDown={(e) => e.key !== 'Tab' ? setMenuOpen(false) : ''} role="button" tabIndex={0}>
+      <div className={modal} onClick={() => setMenuOpen(false)} onKeyDown={(e) => e.key !== 'Tab' && e.key !== 'Shift' ? setMenuOpen(false) : ''} role="button" tabIndex={0}>
         <button 
           className={closeIcon}
           onClick={() => toggleMenu()}

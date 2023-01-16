@@ -12,13 +12,18 @@ const ProjectsPage = ({ data }) => {
   // destructure the data from projectsPage
   const { seoTitle, seoDescription, path } = data.allContentfulProjectsPage.nodes[0];
 
-
   // function that returns a span whose class corresponds with the rendered category
   const getCategoryIcon = (category) => {
     switch (category) {
-      case "HTML & CSS": return <span className={[htmlLogo, logo].join(' ')} />;
-      case "Native JS": return <span className={[jsLogo, logo].join(' ')} />;
-      case "Vue.js": return <span className={[vueLogo, logo].join(' ')} />;
+      case "HTML & CSS": return <span className={[htmlLogo, logo].join(' ')}>
+        <span className="visually-hidden">{category}</span>
+      </span>;
+      case "Native JS": return <span className={[jsLogo, logo].join(' ')}>
+        <span className="visually-hidden">{category}</span>
+      </span>;
+      case "Vue.js": return <span className={[vueLogo, logo].join(' ')}>
+        <span className="visually-hidden">{category}</span>
+      </span>;
       default: return '?'
     }
   }
@@ -86,7 +91,6 @@ const ProjectsPage = ({ data }) => {
 
 export default ProjectsPage;
 
-export const Head = () => <title>Projects</title>;
 
 export const query = graphql`
   {

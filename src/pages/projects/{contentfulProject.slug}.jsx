@@ -9,7 +9,6 @@ const SingleProjectPage = ({ data }) => {
   const singleProject = data.contentfulProject
   const { title, published, url, categories, description, screenshots, slug } = singleProject
 
-
   return (
     <>
       <Seo title={title} description={'made with ' + categories[0]} path={'/projects/' + slug} />
@@ -26,7 +25,6 @@ const SingleProjectPage = ({ data }) => {
         {screenshots.map((screenshot) => (
           <img key={screenshot.resize.src} src={screenshot.resize.src} alt={title} />
         ))}
-
         </section>
       </main>
     </>
